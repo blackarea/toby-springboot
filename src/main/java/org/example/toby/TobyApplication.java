@@ -10,18 +10,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-@Configuration
-@ComponentScan
-public class TobyApplication {
-    @Bean
-    public ServletWebServerFactory servletWebServerFactory(){
-        return new TomcatServletWebServerFactory();
-    }
+import javax.sql.DataSource;
 
-    @Bean
-    public DispatcherServlet dispatcherServlet(){
-        return new DispatcherServlet();
-    }
+@MySpringBootAnnotation
+public class TobyApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(TobyApplication.class, args);
